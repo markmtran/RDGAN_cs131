@@ -1,7 +1,7 @@
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 from tensorlayer.layers import *
 
-w_init = tf.variance_scaling_initializer()
+w_init = tf.compat.v1.variance_scaling_initializer()
 a_init = tf.constant_initializer(0.2)
 
 # VGG for perceptual loss

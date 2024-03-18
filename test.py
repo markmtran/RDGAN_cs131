@@ -1,5 +1,5 @@
 import numpy as np
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 import tensorlayer as tl
 import os, time
 from model import *
@@ -11,14 +11,14 @@ rd_dir = '/content/RDGAN_cs131/rd_model/'
 fe_dir = '/content/RDGAN_cs131/fe_model/'
 
 def main():
-    tf.reset_default_graph()
+    tf.compat.v1.reset_default_graph()
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     sess = tf.Session(config=config)
     
-    img_holder = tf.placeholder(tf.float32, shape=[None, None, 3])
-    hei = tf.placeholder(tf.int32)
-    wid = tf.placeholder(tf.int32)
+    img_holder = tf.compat.v1.placeholder(tf.float32, shape=[None, None, 3])
+    hei = tf.compat.v1.placeholder(tf.int32)
+    wid = tf.compat.v1.placeholder(tf.int32)
     
     img = tf.expand_dims(img_holder, 0)
     img_v = tf.reduce_max(img, axis=-1, keepdims=True)
