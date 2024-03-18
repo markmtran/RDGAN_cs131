@@ -5,6 +5,8 @@ import os, time
 from model import *
 from PIL import Image
 tf.disable_eager_execution()
+print(tf.__version__)
+print(tl.__version__)
 
 in_dir = '/content/data/eval15/low/'
 out_dir = '/content/test_results_rdgan/'
