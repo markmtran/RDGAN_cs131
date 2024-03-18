@@ -5,10 +5,10 @@ import os, time
 from model import *
 from PIL import Image
 
-in_dir = 'samples/'
-out_dir = 'out/'
-rd_dir = 'rd_model/'
-fe_dir = 'fe_model/'
+in_dir = '/content/data/eval15/low/'
+out_dir = '/content/test_results_rdgan/'
+rd_dir = '/content/RDGAN_cs131/rd_model/'
+fe_dir = '/content/RDGAN_cs131/fe_model/'
 
 def main():
     tf.reset_default_graph()
