@@ -1,9 +1,10 @@
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import tensorlayer as tl
 import os, time
 from model import *
 from PIL import Image
+tf.disable_v2_behavior()
 
 in_dir = '/content/data/eval15/low/'
 out_dir = '/content/test_results_rdgan/'
@@ -11,7 +12,8 @@ rd_dir = '/content/RDGAN_cs131/rd_model/'
 fe_dir = '/content/RDGAN_cs131/fe_model/'
 
 def main():
-    config = tf.compat.v1.ConfigProto()
+    tf.reset_default_graph()
+    config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     sess = tf.Session(config=config)
     
