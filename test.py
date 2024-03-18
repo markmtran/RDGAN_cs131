@@ -11,7 +11,6 @@ rd_dir = '/content/RDGAN_cs131/rd_model/'
 fe_dir = '/content/RDGAN_cs131/fe_model/'
 
 def main():
-    tf.reset_default_graph()
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     sess = tf.Session(config=config)
