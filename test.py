@@ -13,7 +13,7 @@ fe_dir = '/content/RDGAN_cs131/fe_model/'
 def main():
     config = tf.compat.v1.ConfigProto()
     config.gpu_options.allow_growth = True
-    sess = tf.Session(config=config)
+    sess = tf.compat.v1.Session(config=config)
     
     img_holder = tf.placeholder(tf.float32, shape=[None, None, 3])
     hei = tf.placeholder(tf.int32)
