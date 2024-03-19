@@ -22,7 +22,7 @@ def main():
     print("img holder shape: ", img_holder.shape)
     hei = tf.keras.Input(shape=(), dtype=tf.int32)
     wid = tf.keras.Input(shape=(), dtype=tf.int32)
-    
+    print("img shape before expand dims: ", img.shape)
     img = tf.expand_dims(img_holder, 0)
     print("img shape: ", img.shape)
     img_v = tf.reduce_max(img, axis=-1, keepdims=True)
