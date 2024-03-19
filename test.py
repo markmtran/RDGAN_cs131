@@ -19,6 +19,7 @@ def main():
     # hei = tf.compat.v1.placeholder(tf.int32)
     # wid = tf.compat.v1.placeholder(tf.int32)
     img_holder = tf.keras.Input(shape=(None, None, 3), dtype=tf.float32)
+    print("img holder shape: ", img_holder.shape)
     hei = tf.keras.Input(shape=(), dtype=tf.int32)
     wid = tf.keras.Input(shape=(), dtype=tf.int32)
     
