@@ -23,7 +23,9 @@ def main():
     wid = tf.keras.Input(shape=[], dtype=tf.int32)
     
     img = tf.expand_dims(img_holder, 0)
+    print("img shape: ", img.shape)
     img_v = tf.reduce_max(img, axis=-1, keepdims=True)
+    print("img_v shape: ", img.shape)
     img_v = close_op(img_v)
     
     img_i, img_r = rdnet(img_v, img, hei, wid)
