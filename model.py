@@ -11,7 +11,8 @@ def vgg19(rgb, reuse=False):
     r, g, b = tf.split(rgb * 255, 3, 3)
     bgr = tf.concat([b-VGG_MEAN[0], g-VGG_MEAN[1], r-VGG_MEAN[2]], axis=-1)
     with tf.variable_scope('vgg', reuse=reuse):
-        input = InputLayer(bgr, name='input')
+        # input = InputLayer(bgr, name='input')
+        input = tf.keras.Input(bgr, name='input')
         net = Conv2d(input, 64, act=tf.nn.relu, name='conv1_1')
         net = Conv2d(net, 64, act=tf.nn.relu, name='conv1_2')
         net = MaxPool2d(net, (2, 2), name='pool1')
