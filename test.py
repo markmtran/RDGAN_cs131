@@ -25,7 +25,9 @@ def main():
     img = tf.expand_dims(img_holder, 0)
     img_v = tf.reduce_max(img, axis=-1, keepdims=True)
     print("img_v shape: ", img_v.shape)
+    img_v = tf.squeeze(img_v, axis=0)
     img_v = close_op(img_v)
+    img_v = tf.expand_dims(img_v, axis=0)
     
     img_i, img_r = rdnet(img_v, img, hei, wid)
     img_i = stretch(img_v, img_i)
