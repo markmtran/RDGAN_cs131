@@ -15,9 +15,12 @@ def main():
     config.gpu_options.allow_growth = True
     sess = tf.compat.v1.Session(config=config)
     
-    img_holder = tf.compat.v1.placeholder(tf.float32, shape=[None, None, 3])
-    hei = tf.compat.v1.placeholder(tf.int32)
-    wid = tf.compat.v1.placeholder(tf.int32)
+    # img_holder = tf.compat.v1.placeholder(tf.float32, shape=[None, None, 3])
+    # hei = tf.compat.v1.placeholder(tf.int32)
+    # wid = tf.compat.v1.placeholder(tf.int32)
+    img_holder = tf.keras.Input(shape=[None, None, 3], dtype=tf.float32)
+    hei = tf.keras.Input(shape=[], dtype=tf.int32)
+    wid = tf.keras.Input(shape=[], dtype=tf.int32)
     
     img = tf.expand_dims(img_holder, 0)
     img_v = tf.reduce_max(img, axis=-1, keepdims=True)
