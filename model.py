@@ -40,7 +40,7 @@ def vgg19(rgb, reuse=False):
 # RDNet
 def rdnet(img_v, img, hei, wid, reuse=False):
     input = tf.concat([img_v, img], -1)
-    with tf.variable_scope('retinex', reuse=reuse):
+    with tf.compat.v1.variable_scope('retinex', reuse=reuse):
         n = InputLayer(input, name='in')
         n11 = conv_k3(n, 32, name='l1/cv1')
         n12 = conv_k3(n11, 32, name='l1/cv2')
