@@ -4,7 +4,6 @@ import tensorlayer as tl
 import os, time
 from model import *
 from PIL import Image
-tf.compat.v1.disable_eager_execution()
 
 in_dir = '/content/data/eval15/low/'
 out_dir = '/content/test_results_rdgan/'
