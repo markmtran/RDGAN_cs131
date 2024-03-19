@@ -146,8 +146,10 @@ def wtv_loss(img_v, img_i, size):
 
 # close operation for V
 def close_op(img_v):
-    out = tf.layers.max_pooling2d(img_v, 3, 1, padding='same')
-    return -tf.layers.max_pooling2d(-out, 3, 1, padding='same')
+    # out = tf.layers.max_pooling2d(img_v, 3, 1, padding='same')
+    # return -tf.layers.max_pooling2d(-out, 3, 1, padding='same')
+    out = tf.keras.layers.MaxPooling2D(3, 1, padding='same')(img_v)
+    return -tf.keras.layers.MaxPooling2D(-out, 3, 1, padding='same')
 
 # stretch for I
 def stretch(img_v, img_i):
